@@ -10,7 +10,7 @@ function Header() {
     <div className='header'>
         <div className='header__left'>
           {/* Avatar for logged in user */}
-          <Avatar className='header__avatar' alt='Gabriel Thierry' src=''/>
+          <Avatar className='header__avatar' alt='Thierry Gabriel' src=''/>
           {/* Time icon */}
           <AccessTimeIcon/> 
         </div>
