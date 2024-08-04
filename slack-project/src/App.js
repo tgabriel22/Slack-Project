@@ -5,7 +5,7 @@ import Sidebar from './Sidebar';
 
 function App() {
   return (
-    // BEM naming convention
+    // BEM naming convention.
     <div className="App">
       {/* Header */}
       <Header/>
