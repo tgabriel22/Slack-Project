@@ -8,9 +8,11 @@ function Message({ message, timestanp, user, userimage }) {
       <div className="message__info">
         <h4>
           {user}{" "}
-          {timestanp
-            ? new Date(timestanp.toDate()).toUTCString()
-            : "No timestamp available"}
+          <span className="message__timestanp">
+            {timestanp
+              ? new Date(timestanp.toDate()).toUTCString()
+              : "No timestanp available"}
+          </span>
         </h4>
         <p>{message}</p>
       </div>
