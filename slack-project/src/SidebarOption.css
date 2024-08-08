@@ -1,33 +1,32 @@
-.sidebarOption{
-    display: flex;
-    align-items: center;
-    font-size: 12px;
-    padding-left: 2px;
-    cursor: pointer;
+.sidebarOption {
+  display: flex;
+  align-items: center;
+  font-size: 12px;
+  padding-left: 2px;
+  cursor: pointer;
 }
 
-.sidebarOption:hover{
-    opacity: 0.9;
-    background-color: #340e36;
+.sidebarOption:hover {
+  opacity: 0.9;
+  background-color: #340e36;
 }
 
-.sidebarOption__icon{
-    padding: 10px;
-    /* Using !important to overwriting the font-size of the MUI */
-    font-size: 15px !important; 
+.sidebarOption__icon {
+  padding: 10px;
+  /* Using !important to overwriting the font-size of the MUI */
+  font-size: 15px !important;
 }
 
-.SidebarOption__channel{
-    padding: 10px 0;
+.SidebarOption__channel {
+  padding: 10px 0;
 }
 
-.SidebarOption__hash{
-    padding: 10px;
-    width: 10px;
-    font-size: 15px !important; 
-
+.SidebarOption__hash {
+  padding: 10px;
+  width: 15px;
+  font-size: 15px !important;
 }
 
-.SidebarOption > h3{
-    font-weight: 500;
+.SidebarOption > h3 {
+  font-weight: 500;
 }
