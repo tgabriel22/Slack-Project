@@ -1,32 +1,59 @@
-import React from "react";
+import React, { useState } from "react";
 import "./App.css";
 import Header from "./Header";
 import Sidebar from "./Sidebar";
 import Chat from "./Chat";
 
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import Login from "./Login";
 
 function App() {
+  const [user, setUser] = useState(null);
   return (
     // BEM naming convention.
     <div className="App">
       <Router>
-        {/* Header */}
+        {/* If there's no user, show the login page */}
+        {/* Otherewise show the app */}
+        {!user ? (
+          <Login />
+        ) : (
+          <>
+            {/* Header */}
+            <Header />
+            <div className="app__body">
+              {/* Sidebar */}
+              <Sidebar />
+              <Routes>
+                <Route path="/room/:roomId" element={<Chat />} />
+                <Route path="/" element={<h1>WELCOME</h1>} />
+              </Routes>
+              {/* React-Router -> Chat screen */}
+            </div>
+          </>
+        )}
+        {/* Header
         <Header />
-        <div className="app__body">
-          {/* Sidebar */}
-          <Sidebar />
+        <div className="app__body"> */}
+        {/* Sidebar */}
+        {/* <Sidebar />
 
           <Routes>
             <Route path="/room/:roomId" element={<Chat />} />
             <Route path="/" element={<h1>WELCOME</h1>} />
-          </Routes>
+          </Routes> */}
 
-          {/* React-Router -> Chat screen */}
-        </div>
+        {/* React-Router -> Chat screen */}
+        {/* </div> */}
       </Router>
     </div>
   );
 }
 
 export default App;
+
+// {/* Header */}
+// <Header />
+// <div className="app__body">
+//   {/* Sidebar */}
+//   <Sidebar />
