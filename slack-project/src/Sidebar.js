@@ -15,11 +15,13 @@ import AppsIcon from "@mui/icons-material/Apps";
 import ExpandLessIcon from "@mui/icons-material/ExpandLess";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 import AddIcon from "@mui/icons-material/Add";
+import { useStateValue } from "./StateProvider";
 import "./Sidebar.css";
 import "./SidebarOption.css";
 
 function Sidebar() {
   const [channels, SetChannels] = useState([]);
+  const [{ user }] = useStateValue();
   // `channels` is the state variable.
   // `SetChannels` is the function to update the state.
 
@@ -40,7 +42,7 @@ function Sidebar() {
           <h2>TG/Dev</h2>
           <h3>
             <FiberManualRecordIcon />
-            Thierry Gabriel
+            {user?.displayName}
           </h3>
         </div>
         <CreateIcon />

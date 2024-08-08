@@ -37,9 +37,6 @@ function Chat() {
     }
   }, [roomId]);
 
-  console.log("DetailsRoomscollect", roomDetails);
-  console.log("DetailsMsgsubcollect ", roomMessages);
-
   return (
     <div className="chat">
       <div className="chat__header">
