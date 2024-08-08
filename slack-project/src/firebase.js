@@ -1,6 +1,7 @@
 // Import needed functions from the SDKs
 import { initializeApp } from "firebase/app";
 import { getFirestore } from "firebase/firestore";
+import { getAuth, GoogleAuthProvider } from "firebase/auth";
 
 // My web app's Firebase configuration
 const firebaseConfig = {
@@ -13,12 +14,14 @@ const firebaseConfig = {
   measurementId: "G-L3MY9CTV9C",
 };
 
-// Initialize Firebase
-initializeApp(firebaseConfig);
-// Initialize Cloud Firestore and get a reference to the service
-export default getFirestore();
+// ========  Initialize Firebase ========
 
-// Initialize the authentification module
-// const auth = firebase.auth();
-// const provider = new firebase.auth.GoogleAuthProvider();
-// export { auth, provider};
+// initializeApp(firebaseConfig);
+const app = initializeApp(firebaseConfig);
+// Initialize Cloud Firestore and get a reference to the service
+const db = getFirestore(app);
+export default db;
+// Initialize Firebase Authentication and get a reference to the service
+export const auth = getAuth(app);
+// Create an instance of the Google provider object
+export const provider = new GoogleAuthProvider();
