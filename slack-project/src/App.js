@@ -26,7 +26,7 @@ function App() {
               <Sidebar />
               <Routes>
                 <Route path="/room/:roomId" element={<Chat />} />
-                <Route path="/" element={<h1>WELCOME</h1>} />
+                {/* <Route path="/" element={<h1>WELCOME</h1>} /> */}
               </Routes>
               {/* React-Router -> Chat screen */}
             </div>
