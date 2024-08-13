@@ -4,9 +4,14 @@ body {
   /* to prevent the vertical scroll bar to appear*/
 }
 
+.App {
+  height: 99vh;
+  width: 99vw;
+}
+
 .app__body {
   display: flex;
-  overflow: hidden; /* Prevent overflowing */
-  height: 100vh; /* Full height of the viewport */
-  width: 100vw; /* Full width of the viewport */
+  overflow: hidden;
+  height: 93%;
+  width: 99%;
 }
