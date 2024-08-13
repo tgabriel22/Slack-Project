@@ -3,23 +3,22 @@ import "./ChatInput.css";
 import db from "./firebase";
 import { useStateValue } from "./StateProvider";
 import { collection, addDoc, serverTimestamp } from "firebase/firestore";
+import SendIcon from "@mui/icons-material/Send";
 
 function ChatInput({ channelName, channelId }) {
   const [input, setInput] = useState("");
   const [{ user }] = useStateValue();
-  console.log("userChecking:", user);
 
   const sendMessage = async (e) => {
-    e.preventDefault(); //so it doesn't refrech the page
+    e.preventDefault(); // Prevent page reload
 
     if (channelId && user) {
-      // Ensure user exists
       try {
         await addDoc(collection(db, `rooms/${channelId}/messages`), {
           message: input,
-          timestanp: serverTimestamp(),
-          user: user.displayName || "Anonymous", // Fallback in case user.displayName is undefined
-          userimage: user.photoURL || "", // Fallback in case user.photoURL is undefined
+          timestamp: serverTimestamp(),
+          user: user.displayName || "Anonymous",
+          userimage: user.photoURL || "",
         });
 
         setInput(""); // Clear the input field after sending the message
@@ -33,15 +32,15 @@ function ChatInput({ channelName, channelId }) {
 
   return (
     <div className="chatInput">
-      <form>
+      <form onSubmit={sendMessage}>
         <input
           value={input}
-          onChange={(e) => setInput(e.target.value)} //map everytime the user type something
+          onChange={(e) => setInput(e.target.value)}
           placeholder={`Message #${channelName?.toLowerCase()}`}
         />
-        <button type="submit" onClick={sendMessage}>
-          Send
-        </button>
+        <div className="sendButton">
+          <SendIcon onClick={sendMessage} />
+        </div>
       </form>
     </div>
   );
