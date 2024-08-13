@@ -1,9 +1,12 @@
 body {
   --slack-color: #3f0f40;
-  overflow: hidden; /* to prevent the vertical scroll bar to appear*/
+  overflow: hidden;
+  /* to prevent the vertical scroll bar to appear*/
 }
 
 .app__body {
   display: flex;
-  height: 100vh;
+  overflow: hidden; /* Prevent overflowing */
+  height: 100vh; /* Full height of the viewport */
+  width: 100vw; /* Full width of the viewport */
 }
